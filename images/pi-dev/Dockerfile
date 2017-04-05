@@ -10,13 +10,22 @@ RUN curl -sSL get.docker.com | sh
 RUN apt-get update \
  && apt-get upgrade \
  && curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - \
- && apt-get install nodejs 
+ && apt-get install nodejs
 
 # download and install gulp
 RUN npm install -g gulp
 
 # download and install typescript
 RUN npm install -g typescript
+
+# download and install ts-node
+RUN npm install -g ts-node
+
+# download and install Wiring Pi
+RUN apt-get update && apt-get install wiringpi
+
+# download and install make etc
+RUN apt-get update && apt-get install build-essential
 
 # we use this all the time, so try to get a nice looking bash
 COPY bashrc /root/.bashrc
