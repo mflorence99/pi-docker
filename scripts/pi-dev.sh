@@ -1,4 +1,4 @@
-# docker image pull mflo999/pi-dev
+docker image pull mflo999/pi-dev
 
 docker container rm -f pi-dev
 
