@@ -1,1 +1,3 @@
-export DOCKER_PASSWORD=33Spike44@@
+U2FsdGVkX18l/qeD40CfUApmwYrbaDxE5P3lx0aAgPyGReUfTjbeDEwliCRnQdHi
+yHDjo5nnUgQfFqT2jbQocahHI4P+oVgfq2mzBnbJQ5nIwBEchoUc19YN98T/i+ef
+UhIF851bbaSj5K7HmF9EuQ==
