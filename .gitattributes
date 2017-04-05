@@ -1,0 +1,1 @@
+pi-passwords.sh filter=crypt diff=crypt

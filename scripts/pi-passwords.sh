@@ -1,0 +1,1 @@
+export DOCKER_PASSWORD=33Spike44@@
