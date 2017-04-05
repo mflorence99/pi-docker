@@ -1,11 +1,12 @@
-docker pull mflo999/pi-dev
+# docker image pull mflo999/pi-dev
 
-docker rm -f pi-dev
+docker container rm -f pi-dev
 
-docker run \
+docker container run \
   --dns 8.8.8.8 \
   --name pi-dev \
   --net dev.net \
+  --privileged=true \
   -e DOCKER_PASSWORD="$DOCKER_PASSWORD" \
   -e DOCKER_USERNAME="$DOCKER_USERNAME" \
   -h localhost \
@@ -20,8 +21,9 @@ docker run \
   -p 55057:5057 \
   -p 55058:5058 \
   -p 55059:5059 \
-  -v $(pwd):/usr/src/app \
+  -v "$DEV_DIR":/usr/src/app \
   -v "$HOME"/tmp:/temp \
-  -v $HOME/.ssh:/root/.ssh \
+  -v "$HOME"/.ssh:/root/.ssh \
+  -v pi-npm-caches:/root/.npm \
   -v /var/run/docker.sock:/var/run/docker.sock \
   mflo999/pi-dev

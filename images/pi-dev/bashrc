@@ -3,6 +3,9 @@ export PS2=" | \[\033[1;34m\]DEV \t => \[\033[0m\]"
 
 export DEV_DIR=/usr/src/app
 
+# npm login via token
+echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > ~/.npmrc
+
 # universal aliases
 alias la='ls --color=always -alFG'
 alias less=more
