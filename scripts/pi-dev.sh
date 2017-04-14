@@ -13,6 +13,7 @@ docker container run \
   -it \
   -p 3000:3000 \
   -p 4200:4200 \
+  -p 8080:8080 \
   -v "$DEV_DIR":/usr/src/app \
   -v "$HOME"/tmp:/temp \
   -v "$HOME"/.ssh:/root/.ssh \
