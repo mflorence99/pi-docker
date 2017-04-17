@@ -9,11 +9,13 @@ docker container run \
   --privileged=true \
   -e DOCKER_PASSWORD="$DOCKER_PASSWORD" \
   -e DOCKER_USERNAME="$DOCKER_USERNAME" \
+  -e PI_LED_HOST="$PI_LED_HOST" \
+  -e PI_LED_WS="$PI_LED_WS" \
   -h localhost \
   -it \
   -p 3000:3000 \
+  -p 4000:4000 \
   -p 4200:4200 \
-  -p 8080:8080 \
   -v "$DEV_DIR":/usr/src/app \
   -v "$HOME"/tmp:/temp \
   -v "$HOME"/.ssh:/root/.ssh \
