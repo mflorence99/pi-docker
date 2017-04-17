@@ -1,24 +1,35 @@
-# docker image pull mflo999/pi-dev
+container="pi-dev"
+running=$(docker inspect --format='{{ .State.Running }}' $container 2> /dev/null)
 
-docker container rm -f pi-dev
+if [ "$running" != "true" ]; then
 
-docker container run \
-  --dns 8.8.8.8 \
-  --name pi-dev \
-  --net dev.net \
-  --privileged=true \
-  -e DOCKER_PASSWORD="$DOCKER_PASSWORD" \
-  -e DOCKER_USERNAME="$DOCKER_USERNAME" \
-  -e PI_LED_HOST="$PI_LED_HOST" \
-  -e PI_LED_WS="$PI_LED_WS" \
-  -h localhost \
-  -it \
-  -p 3000:3000 \
-  -p 4000:4000 \
-  -p 4200:4200 \
-  -v "$DEV_DIR":/usr/src/app \
-  -v "$HOME"/tmp:/temp \
-  -v "$HOME"/.ssh:/root/.ssh \
-  -v pi-npm-caches:/root/.npm \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  mflo999/pi-dev
+  # docker image pull mflo999/"$container"
+
+  docker container rm -f "$container"
+
+  docker container run \
+    --dns 8.8.8.8 \
+    --name "$container" \
+    --net dev.net \
+    --privileged=true \
+    -e DOCKER_PASSWORD="$DOCKER_PASSWORD" \
+    -e DOCKER_USERNAME="$DOCKER_USERNAME" \
+    -e PI_LED_HOST="$PI_LED_HOST" \
+    -e PI_LED_WS="$PI_LED_WS" \
+    -h localhost \
+    -it \
+    -p 3000:3000 \
+    -p 4000:4000 \
+    -p 4200:4200 \
+    -v "$DEV_DIR":/usr/src/app \
+    -v "$HOME"/tmp:/temp \
+    -v "$HOME"/.ssh:/root/.ssh \
+    -v pi-npm-caches:/root/.npm \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    mflo999/"$container"
+
+else
+
+  docker exec -it "$container" bash
+
+fi
