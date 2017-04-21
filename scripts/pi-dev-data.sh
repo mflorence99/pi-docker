@@ -3,6 +3,10 @@ while true; do
   case $yn in
     [Yy]* )
 
+      docker volume rm pi-bower-caches
+      docker volume create \
+        --name pi-bower-caches
+
       docker volume rm pi-npm-caches
       docker volume create \
         --name pi-npm-caches

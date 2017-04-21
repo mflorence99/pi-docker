@@ -24,6 +24,7 @@ if [ "$running" != "true" ]; then
     -v "$DEV_DIR":/usr/src/app \
     -v "$HOME"/tmp:/temp \
     -v "$HOME"/.ssh:/root/.ssh \
+    -v pi-bower-caches:/root/.bower \
     -v pi-npm-caches:/root/.npm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     mflo999/"$container"
