@@ -14,6 +14,7 @@ if [ "$running" != "true" ]; then
     --privileged=true \
     -e DOCKER_PASSWORD="$DOCKER_PASSWORD" \
     -e DOCKER_USERNAME="$DOCKER_USERNAME" \
+    -e NPM_TOKEN="$NPM_TOKEN" \
     -e PI_LED_HOST="$PI_LED_HOST" \
     -e PI_LED_WS="$PI_LED_WS" \
     -h localhost \
