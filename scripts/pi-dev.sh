@@ -24,7 +24,8 @@ if [ "$running" != "true" ]; then
     -p 4200:4200 \
     -v "$DEV_DIR":/usr/src/app \
     -v "$HOME"/tmp:/temp \
-    -v "$HOME"/.ssh:/root/.ssh \
+    -v "$HOME"/.ssh:/root/.ssh-orig \
+    -v "$HOME"/.gitconfig:/root/.gitconfig \
     -v pi-bower-caches:/root/.bower \
     -v pi-npm-caches:/root/.npm \
     -v /var/run/docker.sock:/var/run/docker.sock \
