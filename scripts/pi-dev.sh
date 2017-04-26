@@ -17,6 +17,8 @@ if [ "$running" != "true" ]; then
     -e NPM_TOKEN="$NPM_TOKEN" \
     -e PI_LED_HOST="$PI_LED_HOST" \
     -e PI_LED_WS="$PI_LED_WS" \
+    -e PI_LIB_HOST="$PI_LIB_HOST" \
+    -e PI_LIB_WS="$PI_LIB_WS" \
     -h localhost \
     -it \
     -p 3000:3000 \
