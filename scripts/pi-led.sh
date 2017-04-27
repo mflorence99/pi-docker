@@ -8,9 +8,9 @@ docker container run \
   --name pi-led \
   --privileged=true \
   -d \
-  -e PI_LED_HOST="$PI_LED_HOST" \
-  -e PI_LED_WS="$PI_LED_WS" \
+  -e PI_LED_HOST="https://raspberrypi" \
+  -e PI_LED_WS="wss://raspberrypi:8080" \
   -h pi-led \
-  -p 3000:3000 \
-  -p 4000:4000 \
+  -p 80:3001 \
+  -p 8080:4001 \
   mflo999/pi-led bash

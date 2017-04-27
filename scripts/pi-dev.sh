@@ -22,7 +22,13 @@ if [ "$running" != "true" ]; then
     -h localhost \
     -it \
     -p 3000:3000 \
+    -p 3001:3001 \
+    -p 3002:3002 \
+    -p 3003:3003 \
     -p 4000:4000 \
+    -p 4001:4001 \
+    -p 4002:4002 \
+    -p 4003:4003 \
     -p 4200:4200 \
     -v "$DEV_DIR":/usr/src/app \
     -v "$HOME"/tmp:/temp \
