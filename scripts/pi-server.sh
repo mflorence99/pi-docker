@@ -12,7 +12,6 @@ fi
 # ts_node can't run TypeScript inside node_modules
 if [ -d "node_modules/pi-lib/server" ]; then
   if [ ! -L "node_modules/pi-lib/server" ]; then
-    echo should not be here
     mv node_modules/pi-lib/server/* .pi-lib/server/
     pushd node_modules/pi-lib
     rm -rf server/

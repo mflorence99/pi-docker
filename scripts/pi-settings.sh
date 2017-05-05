@@ -7,3 +7,6 @@ export PI_LED_WS=wss://raspberrypi:4001
 
 export PI_LIB_HOST=https://raspberrypi:3000
 export PI_LIB_WS=wss://raspberrypi:4000
+
+export PI_SKELETON_HOST=https://raspberrypi:3002
+export PI_SKELETON_WS=wss://raspberrypi:4002
