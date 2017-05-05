@@ -1,2 +1,24 @@
-ts-node tools/homify.ts --server
+mkdir -p .pi-lib/tools
+mkdir -p .pi-lib/server
+
+# ts_node can't run TypeScript inside node_modules
+if [ -d "node_modules/pi-lib/tools" ]; then
+  cp -r node_modules/pi-lib/tools .pi-lib/
+  ts-node .pi-lib/tools/homify.ts --server
+else
+  ts-node tools/homify.ts --server
+fi
+
+# ts_node can't run TypeScript inside node_modules
+if [ -d "node_modules/pi-lib/server" ]; then
+  if [ ! -L "node_modules/pi-lib/server" ]; then
+    echo should not be here
+    mv node_modules/pi-lib/server/* .pi-lib/server/
+    pushd node_modules/pi-lib
+    rm -rf server/
+    ln -sf ../../.pi-lib/server server
+    popd
+  fi
+fi
+
 ts-node server/server.ts
