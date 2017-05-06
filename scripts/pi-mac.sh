@@ -25,7 +25,7 @@ if [ "$running" != "true" ]; then
     -p 3000-3010:3000-3010 \
     -p 4000-4010:4000-4010 \
     -p 4200:4200 \
-    -v "$DEV_DIR":/usr/src/app \
+    -v "$HOME"/mflorence99:/usr/src/app \
     -v "$HOME"/tmp:/temp \
     -v "$HOME"/.ssh:/root/.ssh-orig \
     -v "$HOME"/.gitconfig:/root/.gitconfig \
