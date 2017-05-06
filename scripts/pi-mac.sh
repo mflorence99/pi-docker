@@ -1,4 +1,4 @@
-container="pi-dev"
+container="pi-mac"
 running=$(docker inspect --format='{{ .State.Running }}' $container 2> /dev/null)
 
 if [ "$running" != "true" ]; then
