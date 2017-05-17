@@ -29,6 +29,7 @@ if [ "$running" != "true" ]; then
     -v "$HOME"/tmp:/temp \
     -v "$HOME"/.ssh:/root/.ssh-orig \
     -v "$HOME"/.gitconfig:/root/.gitconfig \
+    -v "$HOME"/.netrc:/root/.netrc \
     -v pi-bower-caches:/root/.bower \
     -v pi-npm-caches:/root/.npm \
     -v /var/run/docker.sock:/var/run/docker.sock \
